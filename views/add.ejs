@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Plaster&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- custom css -->
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <main>
+
+        <form action="/add" method="post">
+            <h1>Add Contact</h1>
+            <input type="text" name="contactName" placeholder="Enter your name" required>
+            <input type="email" name="email" placeholder="enter your email " required>
+            <input type="number" name="phone" placeholder="enter your number " required>
+            <div class="">
+                <!-- <label for="tag" class="form-label">Tag</label> -->
+                <select name="tag" id="tag" class="form-select" required>
+
+                  <option value="tag" >Tag</option>
+                  <option value="Friend" >Friend</option>
+                  <option value="Family">Family</option>
+                  <option value="Work" >Work</option>
+                </select>
+              </div>
+              
+            <input type="date" name="lastContacted" required>
+            <button type="submit">add</button>
+            <a href="/" class="back-btn">Back</a>
+        </form>
+    </main>
+</body>
+
+</html>

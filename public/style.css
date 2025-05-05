@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --jost-font-family: 'Jost', sans-serif;
+    --rubic-font-family: 'Rubic', sans-serif;
+}
+
+body {
+    font-family: var(--jost-font-family);
+    background: #f3f4f6;
+    margin: 0;
+    padding: 2rem;
+}
+
+h1 {
+    font-family: var(--rubic-font-family);
+    text-align: center;
+    color: #333;
+    font-weight: 700;
+}
+
+
+.add-btn {
+    display: inline-block;
+    margin: 1rem auto;
+    padding: 0.5rem 1rem;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.add-btn:hover {
+    background-color: #1d4ed8;
+}
+.contact-ul{
+    list-style: none;
+}
+
+
+
+.student-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.3s ease;
+}
+
+.student-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Enhanced shadow effect on hover */
+}
+
+.student-card p {
+    font-family: var(--jost-font-family);
+    margin: 0.5rem 0;
+    color: #444;
+}
+
+.student-card strong {
+    color: #111;
+}
+
+.card-actions {
+    margin-top: 1rem;
+}
+
+.card-actions a {
+    text-decoration: none;
+    margin-right: 0.8rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    background: #10b981;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.card-actions a:hover {
+    background-color: #047857;
+}
+
+
+.card-actions a.delete {
+    background: #ef4444;
+}
+
+.card-actions a.delete:hover {
+    background-color: #dc2626;
+}
+/* add */
+
+/* Edit Form Styles */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f7fa;
+    padding: 20px;
+  }
+  
+  form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Controlled max width */
+  }
+  
+  form h1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  form label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+  }
+  
+  form input:focus {
+    border-color: #4CAF50;
+    background-color: #ffffff;
+    outline: none;
+  }
+  
+  form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  form button:hover {
+    background-color: #45a049;
+  }
+  
+  form .back-btn {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    background-color: #ff4b5c;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    margin-top: 15px;
+    text-decoration: none;
+  }
+  
+  form .back-btn:hover {
+    background-color: #f44336;
+  }
+  
+  form .back-btn:active {
+    background-color: #d32f2f;
+  }
+  
+  /* Make the page responsive */
+  @media (max-width: 600px) {
+    form {
+      padding: 15px;
+      max-width: 100%;
+    }
+  
+    form h1 {
+      font-size: 20px;
+    }
+  
+    form label {
+      font-size: 13px;
+    }
+  
+    form input {
+      padding: 8px;
+    }
+  
+    form button {
+      font-size: 14px;
+    }
+  }
+  
+
+  select.form-select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  select.form-select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+  }
+  
