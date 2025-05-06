@@ -80,16 +80,16 @@ function getRandomColor() {
 
   //more btn 
 
-   function toggleDetails(contactId) {
-  const detailsDiv = document.getElementById(`details-${contactId}`);
+  function toggleDetails(contactId) {
+    const detailsDiv = document.getElementById(`details-${contactId}`);
+    
+    const buttonText = document.getElementById(`button-text-${contactId}`);
   
-  const buttonText = document.getElementById(`button-text-${contactId}`);
-
-  if (detailsDiv.style.display === "none") {
-    detailsDiv.style.display = "flex"; 
-    buttonText.textContent = "Less"; 
-  } else {
-    detailsDiv.style.display = "none"; 
-    buttonText.textContent = "More"; 
+    if (detailsDiv.style.display === "none") {
+      detailsDiv.style.display = "flex"; 
+      buttonText.textContent = "Less"; 
+    } else {
+      detailsDiv.style.display = "none"; 
+      buttonText.textContent = "More"; 
+    }
   }
-}
