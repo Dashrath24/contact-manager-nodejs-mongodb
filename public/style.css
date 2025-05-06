@@ -7,8 +7,19 @@
 :root {
   --jost-font-family: 'Jost', sans-serif;
   --rubic-font-family: 'Rubic', sans-serif;
+  --poppins-font-family: 'Poppins', sans-serif;
 }
+/* comman */
+.d-flex{
+  display: flex;
 
+}
+.justify-content-between{
+  justify-content:space-between;
+}
+.justify-content-around{
+  justify-content:space-around;
+}
 body {
   font-family: var(--jost-font-family);
   background: #f3f4f6;
@@ -33,34 +44,45 @@ h1 {
   text-decoration: none;
   border-radius: 8px;
   transition: background-color 0.3s ease;
+  font-family: var(--poppins-font-family);
 }
 
 .add-btn:hover {
   background-color: #1d4ed8;
 }
-.contact-ul{
+
+.contact-ul {
   list-style: none;
 }
 
 
+.circle {
+  width: 50px;
+  height: 50px;
+  /* background-color: #2592e0; */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .student-card {
-  background: white;
+  display: flex;
   padding: 1.5rem;
-  border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s, box-shadow 0.3s ease;
+  align-items: center;
+  gap: 8px;
 }
 
 .student-card:hover {
-  transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  /* Enhanced shadow effect on hover */
+
 }
 
 .student-card p {
   font-family: var(--jost-font-family);
-  margin: 0.5rem 0;
+  /* margin: 0.5rem 0; */
   color: #444;
 }
 
@@ -69,12 +91,14 @@ h1 {
 }
 
 .card-actions {
-  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  /* margin-top: 1rem; */
 }
 
 .card-actions a {
   text-decoration: none;
-  margin-right: 0.8rem;
+  /* margin-right: 0.8rem; */
   padding: 0.4rem 0.8rem;
   border-radius: 6px;
   background: #10b981;
@@ -94,6 +118,7 @@ h1 {
 .card-actions a.delete:hover {
   background-color: #dc2626;
 }
+
 /* add */
 
 /* Edit Form Styles */
@@ -112,7 +137,8 @@ form {
   border-radius: 10px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 400px; /* Controlled max width */
+  max-width: 400px;
+  /* Controlled max width */
 }
 
 form h1 {
@@ -152,8 +178,9 @@ form input:focus {
 }
 
 form button {
-  width: 100%;
-  padding: 12px;
+  font-family: var(--poppins-font-family);
+  width: 45%;
+  padding: 10px;
   background-color: #4CAF50;
   color: #ffffff;
   border: none;
@@ -168,14 +195,14 @@ form button:hover {
 }
 
 form .back-btn {
+  font-family: var(--poppins-font-family);
   display: inline-block;
-  width: 100%;
+  width: 45%;
   padding: 10px;
   background-color: #ff4b5c;
   color: white;
   text-align: center;
   border-radius: 6px;
-  margin-top: 15px;
   text-decoration: none;
 }
 
@@ -219,9 +246,9 @@ select.form-select {
   border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 16px;
-  font-family: 'Poppins', sans-serif;
-  background-color: #fff;
-  color: #333;
+  font-family: var(--jost-font-family);
+  background-color: #f9f9f9;
+  color: #5d5d5d;
   outline: none;
   transition: border-color 0.3s ease;
 }
@@ -229,4 +256,78 @@ select.form-select {
 select.form-select:focus {
   border-color: #007bff;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.searchInput {
+  width: 300px;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+  font-family: var(--jost-font-family);
+}
+
+.searchInput:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+#tagSelect {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-family: var(--jost-font-family);
+  margin-left: 10px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#tagSelect:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.3);
+}
+
+label[for="tagSelect"] {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: var(--poppins-font-family);
+}
+
+.noContactsFound {
+  display: none;
+  text-align: center;
+  color: red;
+}
+
+.more-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  font-family:var(--poppins-font-family);
+  border-radius: 7px;
+}
+
+.more-btn:hover {
+  background-color: #45a049;
+}
+
+.contact-details {
+  align-items: center;
+  gap: 10px;
 }

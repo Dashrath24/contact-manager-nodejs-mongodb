@@ -17,17 +17,25 @@ app.set("view engine", "ejs");
 
 //Home
 app.get("/", async (req, res) => {
-  const contacts = await Contact.find();
-  res.render("home", { contacts });
+  let contacts = await Contact.find();
+
+  contacts.sort((a, b) =>
+    a.contactName.toLowerCase().localeCompare(b.contactName.toLowerCase())
+  );
+
+  res.render("home", { contacts, more: false });
 });
+
 //add new
 
 app.get("/add", (req, res) => {
   res.render("add");
+
 });
 app.post("/add", async (req, res) => {
   const { contactName, phone, email, tag, lastContacted } = req.body;
   await Contact.create({ contactName, phone, email, tag, lastContacted });
+  
   res.redirect("/");
 });
 //edit

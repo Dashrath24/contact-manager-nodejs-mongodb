@@ -20,49 +20,74 @@
         rel="stylesheet">
     <!-- custom css -->
     <link rel="stylesheet" href="/style.css">
+    
 
 </head>
 <!--  -->
 
 
 <body>
-    <h1>All Students</h1>
-    
-    <!-- <div style="text-align: center;">
-        <a href="/add" class="add-btn">+ Add Student</a>
-    </div> -->
+    <h1>All Contact</h1>
 
+    <div style="text-align: center;">
+        <a href="/add" class="add-btn">+ Add Contact</a>
+    </div>
+    <div class="filters">
+        <input type="text" id="searchInput"class="searchInput" placeholder="Search contacts..." oninput="filterContacts()" />
+        <div style="text-align: center;">
+            <label for="tagSelect">Filter by Tag: </label>
+            <select id="tagSelect" onchange="filterByTag()">
+                <option value="">All Tags</option>
+                <option value="Friend">Friend</option>
+                <option value="Family">Family</option>
+                <option value="Work">Work</option>
+            </select>
+        </div>
+
+    </div>
     <ul class="contact-ul">
         <% contacts.forEach(contact=> { %>
             <li class="contact-li">
-                <div class="student-card">
-                    <p><strong>Name:</strong>
-                        <%= contact.contactName %>
-                    </p>
-                    <p><strong>Phone:</strong>
-                        <%= contact.phone %>
-                    </p>
-                    <p><strong>Email:</strong>
-                        <%= contact.email %>
-                    </p>
-                    <p>
-                        <strong>Tag:</strong>
-                        <%= contact.tag %>
-                    </p>
 
-                    <p><strong>Last Contacted:</strong>
-                        <%= contact.lastContacted %>
-                    </p>
-                    <div class="card-actions">
+                <div class="student-card">
+                    <div class="circle">
+                        <%= contact.contactName.charAt(0).toUpperCase() %>
+                    </div>
+                    <strong class="capitalize">
+                        <%= contact.contactName %>
+                    </strong>
+                    <button class="more-btn" onclick="toggleDetails('<%= contact._id %>')">
+                        <span id="button-text-<%= contact._id %>">More</span> <!-- Default "More" text -->
+                      </button>
+                      
+
+                    <!-- Hidden contact details -->
+                    <div class="contact-details" id="details-<%= contact._id %>" style="display:none;">
+                      <p class="contact-email"><strong>Email:</strong> <%= contact.email %></p>
+                      <p class="contact-tag"><strong>Tag:</strong> <%= contact.tag %></p>
+                      <p><strong>Phone:</strong> <%= contact.phone %></p>
+                      <p><strong>Last Contacted:</strong>
+                        <%= new Date(contact.lastContacted).toLocaleString('en-US', { year: 'numeric', month: 'long', 
+                                        day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true }) %>
+                      </p>
+            
+                      <div class="card-actions">
                         <a href="/edit/<%= contact._id %>">Edit</a>
                         <a href="/delete/<%= contact._id %>" class="delete">Delete</a>
+                      </div>
                     </div>
                 </div>
             </li>
             <% }) %>
     </ul>
 
+    <p id="noContactsFound" class="noContactsFound">No contacts found.</p>
+<script src="./script.js">
+    
+</script>
 
+  </script>
+  
 
 </body>
 
