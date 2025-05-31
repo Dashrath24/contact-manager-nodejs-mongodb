@@ -5,5 +5,6 @@ const contactSchema = new mongoose.Schema({
   email: String,
   tag: String,
   lastContacted: Date,
+  ty:String,
 });
 module.exports = mongoose.model("Contact", contactSchema);

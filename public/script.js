@@ -41,7 +41,7 @@ function filterContacts() {
             contact.style.display = 'none';
         }
     });
-
+   
 //erro msg
     const noContactsMessage = document.getElementById('noContactsFound');
     if (found) {
@@ -61,6 +61,7 @@ function getRandomColor() {
     for (let i = 0; i < 6; i++) {
       color += letters[Math.floor(Math.random() * 16)]; 
     }
+    //#0.2.2.2. 3
     return color; 
   }
   
@@ -93,3 +94,11 @@ function getRandomColor() {
       buttonText.textContent = "More"; 
     }
   }
+
+//   let num=[1,2,3,4]
+//   num.push(39);
+//   console.log(`task3 ${num}`);
+//   let a="jay";
+//   let b= "tank";
+//   console.log(a+b);
+  

@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Contact = require("./models/Contact");
 // const path = require("path");
 const app = express();
-const PORT = 9000;
+const PORT = 7000;
 //
 
 mongoose
@@ -29,14 +29,15 @@ app.get("/", async (req, res) => {
 //add new
 
 app.get("/add", (req, res) => {
-  res.render("add");
-
+  res.render("add", { contact: { lastContacted: new Date() } });
 });
+
 app.post("/add", async (req, res) => {
-  const { contactName, phone, email, tag, lastContacted } = req.body;
-  await Contact.create({ contactName, phone, email, tag, lastContacted });
-  
+  const { contactName, phone, email, tag, lastContacted,ty } = req.body;
+  await Contact.create({ contactName, phone, email, tag,  lastContacted: new Date(lastContacted)});
+
   res.redirect("/");
+  
 });
 //edit
 app.get("/edit/:id", async (req, res) => {
@@ -51,7 +52,7 @@ app.post("/edit/:id", async (req, res) => {
     phone,
     email,
     tag,
-    lastContacted,
+    lastContacted: new Date(lastContacted)
   });
   res.redirect("/");
 });
@@ -60,7 +61,19 @@ app.get("/delete/:id", async (req, res) => {
   await Contact.findByIdAndDelete(req.params.id);
   res.redirect("/");
 });
+// Deleting multiple contacts based on IDs passed as query parameters
+app.get("/delete-multiple", async (req, res) => {
+  const contactIds = req.query.ids.split(','); // Get array of IDs from the query string
+  if (contactIds.length > 0) {
+    // Delete the contacts from the database
+    await Contact.deleteMany({ _id: { $in: contactIds } });
+    res.redirect("/");  // Redirect back to the main page after deletion
+  } else {
+    res.redirect("/");  // Or show an error message if no IDs were passed
+  }
+});
+
 //port
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`server running at : ${PORT}`);
 });

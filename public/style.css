@@ -20,11 +20,17 @@
 .justify-content-around{
   justify-content:space-around;
 }
+.align-centre{
+  align-items: center;
+}
+.gap-2{
+  gap: 10px;
+}
 body {
-  font-family: var(--jost-font-family);
+  /* font-family: var(--jost-font-family); */
   background: #f3f4f6;
   margin: 0;
-  padding: 2rem;
+ 
 }
 
 h1 {
@@ -62,17 +68,20 @@ h1 {
   /* background-color: #2592e0; */
   border-radius: 50%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
 
 .student-card {
   display: flex;
+  flex-wrap: wrap;
   padding: 1.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s, box-shadow 0.3s ease;
   align-items: center;
   gap: 8px;
+  justify-content: space-between;
 }
 
 .student-card:hover {
@@ -80,20 +89,39 @@ h1 {
 
 }
 
-.student-card p {
+.circle p {
   font-family: var(--jost-font-family);
   /* margin: 0.5rem 0; */
-  color: #444;
+  color: #000000;
+  font-weight: 500;
+  font-size: 1.2rem;
 }
-
-.student-card strong {
+.contact-details strong{
+  font-family: var(--jost-font-family);
+  /* margin: 0.5rem 0; */
+  color: #000000;
+  font-weight: 500;
+  /* font-size: 1.2rem; */
+}
+.student-card p{
+  font-family: var(--jost-font-family);
+  /* margin: 0.5rem 0; */
+  color: #353535;
+  /* font-weight: 500; */
+  /* font-size: 1.2rem; */
+}
+.circle + strong {
   color: #111;
+  font-family: var(--jost-font-family);
+  font-weight: 600;
 }
 
 .card-actions {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
   /* margin-top: 1rem; */
+  font-family: var(--poppins-font-family);
 }
 
 .card-actions a {
@@ -122,15 +150,19 @@ h1 {
 /* add */
 
 /* Edit Form Styles */
-main {
+.form-parent {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+align-items: center;
+  /* min-height: 100vh; */
   background-color: #f4f7fa;
   padding: 20px;
 }
-
+.container{
+  width: 100%;
+  padding: 20px;
+}
 form {
   background-color: #ffffff;
   padding: 20px;
@@ -154,8 +186,9 @@ form label {
   color: #666;
   margin-bottom: 5px;
   display: block;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   letter-spacing: 1px;
+  font-family: var(--rubic-font-family);
 }
 
 form input {
@@ -164,11 +197,12 @@ form input {
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 1rem;
   color: #333;
   background-color: #f9f9f9;
   box-sizing: border-box;
   transition: all 0.3s ease;
+  font-family: var(--jost-font-family);
 }
 
 form input:focus {
@@ -254,7 +288,7 @@ select.form-select {
 }
 
 select.form-select:focus {
-  border-color: #007bff;
+  border-color:#4CAF50;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
 }
 
@@ -264,8 +298,10 @@ select.form-select:focus {
 
 .filters {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 20px;
+  gap: 1rem;
 }
 
 .searchInput {
@@ -297,7 +333,7 @@ select.form-select:focus {
 }
 
 #tagSelect:focus {
-  border-color: #28a745;
+  border-color: #007BFF;
   box-shadow: 0 0 5px rgba(40, 167, 69, 0.3);
 }
 
@@ -311,6 +347,7 @@ label[for="tagSelect"] {
   display: none;
   text-align: center;
   color: red;
+  font-family: var(--jost-font-family);
 }
 
 .more-btn {
@@ -321,6 +358,7 @@ label[for="tagSelect"] {
   cursor: pointer;
   font-family:var(--poppins-font-family);
   border-radius: 7px;
+  /* margin-left: auto; */
 }
 
 .more-btn:hover {
@@ -330,4 +368,30 @@ label[for="tagSelect"] {
 .contact-details {
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+}
+
+/* select */
+
+.select-all button {
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: royalblue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.select-all button:hover {
+  background-color: dodgerblue;
+}
+
+
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: royalblue;
 }

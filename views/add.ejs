@@ -17,29 +17,37 @@
 
 <body>
     <main>
+        <div class="form-parent">
 
-        <form action="/add" method="post">
-            <h1>Add Contact</h1>
-            <input type="text" name="contactName" placeholder="Enter your name" required>
-            <input type="email" name="email" placeholder="enter your email " required>
-            <input type="number" name="phone" placeholder="enter your number " required>
-            <div class="">
-                <select name="tag" id="tag" class="form-select" required>
 
-                  <option value="tag" >Tag</option>
-                  <option value="Friend" >Friend</option>
-                  <option value="Family">Family</option>
-                  <option value="Work" >Work</option>
-                </select>
-              </div>
-              
-            <input type="date" name="lastContacted" required>
-            <div class="d-flex justify-content-around">
-         
-            <button type="submit">add</button>
-            <a href="/" class="back-btn">Back</a>       
+            <form action="/add" method="post">
+                <h1>Add Contact</h1>
+                <input type="text" name="contactName" placeholder="Enter your name" required>
+                <input type="email" name="email" placeholder="enter your email " required>
+                <input type="number" name="phone" placeholder="enter your number " required>
+                <div class="">
+                    <select name="tag" id="tag" class="form-select" required>
+
+                        <option value="tag">Tag</option>
+                        <option value="Friend">Friend</option>
+                        <option value="Family">Family</option>
+                        <option value="Work">Work</option>
+                    </select>
+                </div>
+                <% const lastDate=contact && contact.lastContacted ? new Date(contact.lastContacted) : new Date(); const
+                    isoString=new Date(lastDate).toISOString(); // Always in format YYYY-MM-DDTHH:MM:SS.sssZ const
+                    finalFormattedDate=isoString.slice(0, 16); // Get "YYYY-MM-DDTHH:MM" %>
+
+
+                    <!-- <label for="lastContacted">Last Contacted:</label> -->
+                    <input type="datetime-local" name="lastContacted" id="lastContacted" required
+                        value="<%= finalFormattedDate %>">
+                    <div class="d-flex justify-content-around">
+                        <button type="submit">Add</button>
+                        <a href="/" class="back-btn">Back</a>
+                    </div>
+            </form>
         </div>
-        </form>
     </main>
 </body>
 
